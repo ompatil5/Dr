@@ -1,0 +1,1176 @@
+/* ==========================================================================
+   Dr. Firdous Shaikh - Clinic & Personal Brand Website
+   Luxury Modern Design System & Stylesheet
+   ========================================================================== */
+
+/* --- Custom Properties / Lavender Luxury Design Tokens --- */
+@import url('https://fonts.googleapis.com/css2?family=Alex+Brush&family=Cormorant+Garamond:ital,wght@0,500;1,500;1,600&display=swap');
+
+:root {
+  /* Lavender Palette (From Client Reference Palette) */
+  --navy-primary: #704A74;       /* Dark Royal Plum (RGB 112, 74, 116) - Dark Sections & Headers */
+  --navy-dark: #4B2B4E;          /* Deep Obsidian Plum - Top Bar & Footers */
+  --navy-light: #5C3A60;         /* Mid Dark Plum - Dark Card Backgrounds */
+  
+  --cream-bg: #F4E3F6;           /* Very Light Soft Lavender (RGB 244, 227, 246) - Light Section Tint */
+  --cream-card: #FFFFFF;         /* Crisp Pure White Card */
+  --cream-border: #DBBCDF;       /* Soft Lavender Border (RGB 219, 188, 223) */
+  
+  --accent-gold: #916496;        /* Deep Mauve Accent (RGB 145, 100, 150) - Buttons & Icons */
+  --accent-gold-hover: #704A74;  /* Dark Plum Accent Hover */
+  --accent-gold-light: #F4E3F6;  /* Soft Lavender Tint */
+  --accent-gold-subtle: #DBBCDF; /* Soft Lavender Badge Tint */
+  --accent-gold-mid: #BC8BC2;    /* Mid Lilac Accent (RGB 188, 139, 194) */
+  
+  --accent-emerald: #916496;
+  --accent-emerald-light: #F4E3F6;
+  
+  --dark-text: #321B35;          /* Rich Deep Purple Text */
+  --muted-text: #68506A;         /* Soft Muted Plum Body Text */
+  --light-text: #F4E3F6;
+  
+  /* Gradients */
+  --navy-gradient: linear-gradient(135deg, #704A74 0%, #4B2B4E 100%);
+  --gold-gradient: linear-gradient(135deg, #916496 0%, #BC8BC2 100%);
+  --cream-gradient: linear-gradient(180deg, #F4E3F6 0%, #F9EFFB 100%);
+  
+  /* Shadows */
+  --card-shadow: 0 10px 30px rgba(112, 74, 116, 0.08);
+  --hover-shadow: 0 25px 50px -12px rgba(112, 74, 116, 0.18);
+  --gold-glow: 0 8px 25px rgba(145, 100, 150, 0.35);
+  
+  /* Luxury Typography */
+  --font-serif: 'Playfair Display', Georgia, serif;
+  --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-quote: 'Cormorant Garamond', Georgia, serif;
+  --font-signature: 'Alex Brush', cursive;
+  
+  /* Transitions */
+  --transition-smooth: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  --transition-fast: all 0.25s ease-in-out;
+}
+
+/* --- Base & Reset --- */
+body {
+  font-family: var(--font-sans);
+  color: var(--dark-text);
+  background-color: #ffffff;
+  line-height: 1.7;
+  overflow-x: hidden;
+  font-size: 1.025rem;
+  letter-spacing: -0.01em;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-serif);
+  color: var(--navy-primary);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  line-height: 1.25;
+}
+
+h1 { font-size: 3.25rem; }
+h2 { font-size: 2.5rem; }
+h3 { font-size: 2rem; }
+h4 { font-size: 1.5rem; }
+
+@media (max-width: 768px) {
+  h1 { font-size: 2.25rem; }
+  h2 { font-size: 1.85rem; }
+  h3 { font-size: 1.5rem; }
+}
+
+a {
+  text-decoration: none;
+  transition: var(--transition-fast);
+}
+
+/* --- Helper Classes for Badges and Accents --- */
+.bg-gold {
+  background-color: var(--accent-gold) !important;
+  color: #ffffff !important;
+}
+
+.bg-gold-subtle {
+  background-color: var(--accent-gold-subtle) !important;
+  color: var(--navy-primary) !important;
+}
+
+.text-gold {
+  color: var(--accent-gold) !important;
+}
+
+.bg-navy {
+  background-color: var(--navy-primary) !important;
+  color: #ffffff !important;
+}
+
+.bg-navy-light {
+  background-color: var(--navy-light) !important;
+}
+
+.bg-navy-subtle {
+  background-color: var(--accent-gold-light) !important;
+  color: var(--navy-primary) !important;
+}
+
+.border-gold-subtle {
+  border-color: rgba(219, 188, 223, 0.4) !important;
+}
+
+/* --- Bootstrap Overrides --- */
+.bg-primary {
+  background-color: var(--navy-primary) !important;
+}
+
+.text-primary {
+  color: var(--accent-gold) !important;
+}
+
+.btn-primary {
+  background-color: var(--navy-primary) !important;
+  border-color: var(--navy-primary) !important;
+  color: #ffffff !important;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  transition: var(--transition-smooth) !important;
+}
+
+.btn-primary:hover, .btn-primary:focus {
+  background-color: var(--accent-gold) !important;
+  border-color: var(--accent-gold) !important;
+  color: #ffffff !important;
+  box-shadow: var(--gold-glow) !important;
+  transform: translateY(-2px);
+}
+
+.btn-outline-primary {
+  color: var(--navy-primary) !important;
+  border-color: var(--navy-primary) !important;
+  background-color: transparent !important;
+  font-weight: 600;
+  transition: var(--transition-smooth) !important;
+}
+
+.btn-outline-primary:hover {
+  background-color: var(--navy-primary) !important;
+  color: #ffffff !important;
+  border-color: var(--navy-primary) !important;
+  transform: translateY(-2px);
+}
+
+.bg-light-custom {
+  background-color: var(--cream-bg) !important;
+}
+
+.text-navy {
+  color: var(--navy-primary) !important;
+}
+
+.text-teal {
+  color: var(--accent-gold) !important;
+}
+
+/* --- Global Icon, Symbol & Text Harmonization --- */
+i.fas, i.far, i.fab, i.fa {
+  transition: var(--transition-fast);
+}
+
+.section-title i,
+h1 i, h2 i, h3 i, h4 i, h5 i, h6 i {
+  color: var(--accent-gold);
+}
+
+ul.list-unstyled li i {
+  color: var(--accent-gold);
+}
+
+.card-icon,
+.feature-icon,
+.icon-box {
+  color: var(--accent-gold);
+}
+
+/* Custom Text Selection */
+::selection {
+  background-color: var(--accent-gold-subtle);
+  color: var(--navy-primary);
+}
+
+/* Lavender Webkit Scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: var(--cream-bg);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--accent-gold-mid);
+  border-radius: 5px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--accent-gold);
+}
+
+/* --- Elevated Section Spacing --- */
+.section-padding {
+  padding: 110px 0;
+}
+
+@media (max-width: 768px) {
+  .section-padding {
+    padding: 65px 0;
+  }
+}
+
+/* ==========================================================================
+   VISUAL RHYTHM SYSTEM (3-Treatment Alternating Rhythm Cycle)
+   1. pattern-bg-dots: Light ivory background + faint gold dot pattern
+   2. bg-solid-navy: Solid dark navy block - completely flat, NO pattern
+   3. bg-plain-clean: Plain white background - completely clean, no pattern
+   ========================================================================== */
+
+/* Treatment 1: Light Ivory Background + Faint Gold Dot Pattern */
+.pattern-bg-dots {
+  background-color: var(--cream-bg) !important;
+  background-image: radial-gradient(rgba(197, 160, 89, 0.22) 1.5px, transparent 1.5px) !important;
+  background-size: 28px 28px !important;
+  color: var(--dark-text);
+  position: relative;
+}
+.pattern-bg-dots .section-title h2,
+.pattern-bg-dots h1, .pattern-bg-dots h2, .pattern-bg-dots h3, .pattern-bg-dots h4, .pattern-bg-dots h5, .pattern-bg-dots h6 {
+  color: var(--navy-primary) !important;
+}
+.pattern-bg-dots .section-title .subtitle {
+  color: var(--accent-gold) !important;
+}
+.pattern-bg-dots .text-navy {
+  color: var(--navy-primary) !important;
+}
+.pattern-bg-dots .text-muted {
+  color: var(--muted-text) !important;
+}
+.pattern-bg-dots .card,
+.pattern-bg-dots .award-card,
+.pattern-bg-dots .service-card,
+.pattern-bg-dots .testimonial-card,
+.pattern-bg-dots .value-card,
+.pattern-bg-dots .contact-form-card {
+  background-color: #ffffff !important;
+  border: 1px solid var(--cream-border) !important;
+  box-shadow: var(--card-shadow) !important;
+  color: var(--dark-text) !important;
+}
+
+/* Treatment 2: Solid Dark Navy Block (Flat, NO Pattern) */
+.bg-solid-navy {
+  background-color: var(--navy-primary) !important;
+  background-image: none !important;
+  color: rgba(255, 255, 255, 0.9) !important;
+  position: relative;
+}
+.bg-solid-navy .section-title h2,
+.bg-solid-navy h1, .bg-solid-navy h2, .bg-solid-navy h3, .bg-solid-navy h4, .bg-solid-navy h5, .bg-solid-navy h6 {
+  color: #ffffff !important;
+}
+.bg-solid-navy .section-title .subtitle {
+  color: var(--accent-gold) !important;
+}
+.bg-solid-navy .divider {
+  background: var(--gold-gradient) !important;
+}
+.bg-solid-navy .text-navy {
+  color: #ffffff !important;
+}
+.bg-solid-navy .text-muted {
+  color: rgba(255, 255, 255, 0.75) !important;
+}
+.bg-solid-navy .lead {
+  color: rgba(255, 255, 255, 0.9) !important;
+}
+.bg-solid-navy .award-card,
+.bg-solid-navy .service-card,
+.bg-solid-navy .testimonial-card,
+.bg-solid-navy .value-card,
+.bg-solid-navy .contact-form-card,
+.bg-solid-navy .card {
+  background: rgba(255, 255, 255, 0.06) !important;
+  border: 1px solid rgba(197, 160, 89, 0.3) !important;
+  color: #ffffff !important;
+  backdrop-filter: blur(8px);
+}
+.bg-solid-navy .award-card h5,
+.bg-solid-navy .service-card h4,
+.bg-solid-navy .testimonial-card h6,
+.bg-solid-navy .value-card h4,
+.bg-solid-navy .contact-form-card h3,
+.bg-solid-navy .card h5,
+.bg-solid-navy .card h6 {
+  color: #ffffff !important;
+}
+.bg-solid-navy .form-label {
+  color: rgba(255, 255, 255, 0.9) !important;
+}
+.bg-solid-navy .form-control,
+.bg-solid-navy .form-select {
+  background-color: rgba(255, 255, 255, 0.1) !important;
+  border-color: rgba(197, 160, 89, 0.3) !important;
+  color: #ffffff !important;
+}
+.bg-solid-navy .form-control::placeholder {
+  color: rgba(255, 255, 255, 0.5) !important;
+}
+.bg-solid-navy .form-select option {
+  background-color: var(--navy-primary);
+  color: #ffffff;
+}
+.bg-solid-navy .stat-box {
+  background: rgba(255, 255, 255, 0.08) !important;
+  border-color: rgba(197, 160, 89, 0.3) !important;
+}
+.bg-solid-navy .stat-box .number {
+  color: var(--accent-gold) !important;
+}
+.bg-solid-navy .stat-box .label {
+  color: rgba(255, 255, 255, 0.8) !important;
+}
+.bg-solid-navy .doctor-profile-card {
+  background: rgba(255, 255, 255, 0.05) !important;
+  border: 1px solid rgba(197, 160, 89, 0.3) !important;
+}
+.bg-solid-navy .alert-info {
+  background-color: rgba(255, 255, 255, 0.08) !important;
+  border-color: rgba(197, 160, 89, 0.4) !important;
+  color: #ffffff !important;
+}
+
+/* Treatment 3: Plain White/Ivory Background (Clean, NO Pattern) */
+.bg-plain-clean {
+  background-color: #ffffff !important;
+  background-image: none !important;
+  color: var(--dark-text);
+  position: relative;
+}
+.bg-plain-clean .section-title h2,
+.bg-plain-clean h1, .bg-plain-clean h2, .bg-plain-clean h3, .bg-plain-clean h4, .bg-plain-clean h5, .bg-plain-clean h6 {
+  color: var(--navy-primary) !important;
+}
+.bg-plain-clean .section-title .subtitle {
+  color: var(--accent-gold) !important;
+}
+.bg-plain-clean .text-navy {
+  color: var(--navy-primary) !important;
+}
+.bg-plain-clean .text-muted {
+  color: var(--muted-text) !important;
+}
+.bg-plain-clean .card,
+.bg-plain-clean .award-card,
+.bg-plain-clean .service-card,
+.bg-plain-clean .testimonial-card,
+.bg-plain-clean .value-card,
+.bg-plain-clean .contact-form-card {
+  background-color: var(--cream-bg) !important;
+  border: 1px solid var(--cream-border) !important;
+  box-shadow: var(--card-shadow) !important;
+  color: var(--dark-text) !important;
+}
+
+/* Page Hero Banner */
+.page-hero-banner {
+  background-color: var(--navy-primary) !important;
+  background-image: none !important;
+  padding: 60px 0;
+  border-bottom: 2px solid var(--accent-gold);
+}
+
+.section-title {
+  position: relative;
+  margin-bottom: 3.25rem;
+}
+
+.section-title h2 {
+  font-size: 2.65rem;
+  margin-bottom: 0.75rem;
+  font-family: var(--font-serif);
+}
+
+.section-title .subtitle {
+  color: var(--accent-gold);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 2.5px;
+  font-size: 0.825rem;
+  display: block;
+  margin-bottom: 6px;
+  font-family: var(--font-sans);
+}
+
+.section-title .divider {
+  width: 70px;
+  height: 3px;
+  background: var(--gold-gradient);
+  border-radius: 2px;
+  margin-top: 14px;
+}
+
+.section-title.text-center .divider {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* --- Top Info Bar --- */
+.top-bar {
+  background-color: var(--navy-dark);
+  color: rgba(255, 255, 255, 0.85);
+  font-size: 0.875rem;
+  padding: 10px 0;
+  border-bottom: 1px solid rgba(197, 160, 89, 0.2);
+}
+
+.top-bar a {
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.top-bar a:hover {
+  color: var(--accent-gold);
+}
+
+/* --- Luxury Main Navbar --- */
+.navbar-custom {
+  background-color: rgba(255, 255, 255, 0.96);
+  backdrop-filter: blur(12px);
+  box-shadow: 0 4px 25px rgba(26, 35, 50, 0.06);
+  padding: 16px 0;
+  transition: var(--transition-fast);
+}
+
+.navbar-brand .brand-name {
+  font-family: var(--font-serif);
+  font-size: 1.45rem;
+  font-weight: 700;
+  color: var(--navy-primary);
+  line-height: 1.2;
+}
+
+.navbar-brand .brand-title {
+  font-family: var(--font-sans);
+  font-size: 0.75rem;
+  color: var(--accent-gold);
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  display: block;
+}
+
+.navbar-custom .nav-link {
+  font-weight: 600;
+  color: var(--navy-primary);
+  font-size: 0.9rem;
+  padding: 8px 14px !important;
+  border-radius: 6px;
+  transition: var(--transition-fast);
+  letter-spacing: 0.2px;
+  white-space: nowrap;
+}
+
+.navbar-custom .nav-link:hover,
+.navbar-custom .nav-link.active {
+  color: var(--accent-gold) !important;
+  background-color: var(--accent-gold-light);
+}
+
+/* --- Luxury Dropdown Menu Styling --- */
+.navbar-custom .dropdown-menu {
+  border: 1px solid var(--cream-border);
+  border-top: 3px solid var(--accent-gold);
+  border-radius: 12px;
+  background-color: #ffffff;
+  box-shadow: 0 15px 35px rgba(26, 35, 50, 0.12);
+  padding: 10px 0;
+  margin-top: 10px;
+}
+
+.navbar-custom .dropdown-item {
+  font-weight: 600;
+  font-size: 0.9rem;
+  color: var(--navy-primary);
+  padding: 9px 20px;
+  transition: var(--transition-fast);
+  white-space: nowrap;
+}
+
+.navbar-custom .dropdown-item:hover,
+.navbar-custom .dropdown-item:focus {
+  background-color: var(--accent-gold-light);
+  color: var(--accent-gold);
+  padding-left: 24px;
+}
+
+.navbar-custom .dropdown-item.active {
+  background-color: var(--accent-gold);
+  color: #ffffff;
+}
+
+/* Desktop hover trigger for seamless UX */
+@media (min-width: 992px) {
+  .navbar-custom .nav-item.dropdown:hover .dropdown-menu {
+    display: block;
+    animation: fadeInDown 0.25s ease forwards;
+  }
+}
+
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+/* --- Emergency Action Buttons Bar --- */
+.emergency-bar {
+  background: var(--navy-gradient);
+  color: #ffffff;
+  padding: 22px 0;
+  border-top: 1px solid rgba(197, 160, 89, 0.25);
+  border-bottom: 1px solid rgba(197, 160, 89, 0.25);
+  box-shadow: 0 10px 30px rgba(17, 24, 39, 0.3);
+}
+
+.btn-emergency-wa {
+  background-color: #25d366;
+  color: #ffffff;
+  font-weight: 700;
+  padding: 13px 28px;
+  border-radius: 50px;
+  box-shadow: 0 6px 20px rgba(37, 211, 102, 0.3);
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  transition: var(--transition-smooth);
+}
+
+.btn-emergency-wa:hover {
+  background-color: #1eb954;
+  color: #ffffff;
+  transform: translateY(-3px);
+  box-shadow: 0 12px 25px rgba(37, 211, 102, 0.45);
+}
+
+.btn-emergency-call {
+  background: var(--gold-gradient);
+  color: var(--navy-dark);
+  font-weight: 700;
+  padding: 13px 28px;
+  border-radius: 50px;
+  box-shadow: var(--gold-glow);
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  transition: var(--transition-smooth);
+}
+
+.btn-emergency-call:hover {
+  background: #ffffff;
+  color: var(--navy-primary);
+  transform: translateY(-3px);
+}
+
+/* --- Hero Photo Slider Carousel & Decorative Glow Overlay --- */
+.hero-slider {
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-slider::before {
+  content: '';
+  position: absolute;
+  top: -80px;
+  right: -80px;
+  width: 480px;
+  height: 480px;
+  background: radial-gradient(circle, rgba(145, 100, 150, 0.28) 0%, rgba(112, 74, 116, 0) 70%);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 3;
+}
+
+.hero-slider::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  background-image: radial-gradient(rgba(145, 100, 150, 0.15) 1.2px, transparent 1.2px);
+  background-size: 32px 32px;
+  pointer-events: none;
+  z-index: 2;
+  opacity: 0.5;
+}
+
+.hero-slider .carousel-item {
+  height: 560px;
+  background-color: var(--navy-dark);
+}
+
+@media (max-width: 768px) {
+  .hero-slider .carousel-item {
+    height: 400px;
+  }
+}
+
+.hero-slider img {
+  object-fit: cover;
+  height: 100%;
+  width: 100%;
+  filter: brightness(0.68);
+}
+
+.hero-slider .carousel-caption {
+  background: rgba(75, 43, 78, 0.88);
+  backdrop-filter: blur(12px);
+  padding: 30px 40px;
+  border-radius: 16px;
+  border-left: 4px solid var(--accent-gold);
+  border-top: 1px solid rgba(255, 255, 255, 0.15);
+  bottom: 45px;
+  max-width: 750px;
+  margin: 0 auto;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.35);
+}
+
+.hero-slider .carousel-caption h2 {
+  font-family: var(--font-serif);
+  font-size: 2.2rem;
+  letter-spacing: -0.01em;
+}
+
+@media (max-width: 768px) {
+  .hero-slider .carousel-caption h2 {
+    font-size: 1.4rem;
+  }
+}
+
+/* --- Doctor Bio Section --- */
+.doctor-profile-card {
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: var(--card-shadow);
+  border: 1px solid var(--cream-border);
+  background: #ffffff;
+  transition: var(--transition-smooth);
+}
+
+.doctor-profile-card:hover {
+  box-shadow: var(--hover-shadow);
+  transform: translateY(-6px);
+}
+
+.stat-box {
+  background: var(--accent-gold-light);
+  border-radius: 14px;
+  padding: 22px 15px;
+  text-align: center;
+  border: 1px solid rgba(219, 188, 223, 0.45);
+  transition: var(--transition-smooth);
+}
+
+.stat-box:hover {
+  background: #ffffff;
+  border-color: var(--accent-gold);
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(197, 160, 89, 0.15);
+}
+
+.stat-box .number {
+  font-family: var(--font-serif);
+  font-size: 2.35rem;
+  font-weight: 700;
+  color: var(--accent-gold);
+  display: block;
+  line-height: 1;
+  margin-bottom: 5px;
+}
+
+.stat-box .label {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--navy-primary);
+}
+
+/* --- Award Cards --- */
+.award-card {
+  background: #ffffff;
+  border-radius: 18px;
+  padding: 38px 28px;
+  box-shadow: var(--card-shadow);
+  border: 1px solid var(--cream-border);
+  transition: var(--transition-smooth);
+  height: 100%;
+  position: relative;
+}
+
+.award-card:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--hover-shadow);
+  border-color: var(--accent-gold);
+}
+
+.award-icon {
+  width: 70px;
+  height: 70px;
+  background: var(--accent-gold-light);
+  color: var(--accent-gold);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.85rem;
+  margin-bottom: 22px;
+  border: 1px solid rgba(197, 160, 89, 0.3);
+  transition: var(--transition-smooth);
+}
+
+.award-card:hover .award-icon {
+  background: var(--accent-gold);
+  color: #ffffff;
+  transform: scale(1.08);
+}
+
+/* --- Service Cards --- */
+.service-card {
+  background: #ffffff;
+  border-radius: 18px;
+  padding: 40px 30px;
+  box-shadow: var(--card-shadow);
+  border: 1px solid var(--cream-border);
+  transition: var(--transition-smooth);
+  height: 100%;
+}
+
+.service-card:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--hover-shadow);
+  border-color: var(--accent-gold);
+}
+
+.service-icon {
+  width: 72px;
+  height: 72px;
+  background: var(--navy-primary);
+  color: var(--accent-gold);
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  margin-bottom: 25px;
+  transition: var(--transition-smooth);
+}
+
+.service-card:hover .service-icon {
+  background: var(--accent-gold);
+  color: #ffffff;
+  transform: scale(1.05);
+}
+
+/* --- Video Segment --- */
+.video-container {
+  position: relative;
+  border-radius: 24px;
+  overflow: hidden;
+  box-shadow: var(--hover-shadow);
+  border: 1px solid var(--cream-border);
+}
+
+.video-placeholder {
+  background: linear-gradient(rgba(26, 35, 50, 0.75), rgba(17, 24, 39, 0.85)), url('https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=1200&q=80');
+  background-size: cover;
+  background-position: center;
+  height: 420px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  color: #ffffff;
+  text-align: center;
+}
+
+.play-btn {
+  width: 85px;
+  height: 85px;
+  background: var(--accent-gold);
+  color: #ffffff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2.2rem;
+  box-shadow: 0 0 0 14px rgba(197, 160, 89, 0.25);
+  transition: var(--transition-smooth);
+  cursor: pointer;
+  padding-left: 5px;
+}
+
+.play-btn:hover {
+  transform: scale(1.12);
+  background: #ffffff;
+  color: var(--accent-gold);
+  box-shadow: 0 0 0 20px rgba(197, 160, 89, 0.35);
+}
+
+/* --- Testimonials --- */
+.testimonial-card {
+  background: #ffffff;
+  border-radius: 18px;
+  padding: 35px 30px;
+  box-shadow: var(--card-shadow);
+  border: 1px solid var(--cream-border);
+  transition: var(--transition-smooth);
+  height: 100%;
+}
+
+.testimonial-card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--hover-shadow);
+  border-color: var(--accent-gold);
+}
+
+.stars {
+  color: var(--accent-gold);
+  margin-bottom: 18px;
+  font-size: 1.1rem;
+}
+
+/* --- Page Hero Treatment (Dark Royal Plum + Lavender Glow) --- */
+.page-hero-banner {
+  position: relative;
+  overflow: hidden;
+  background: var(--navy-gradient) !important;
+}
+
+.page-hero-banner::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: 
+    radial-gradient(circle at 10% 20%, rgba(188, 139, 194, 0.25) 0%, transparent 45%),
+    radial-gradient(circle at 90% 80%, rgba(145, 100, 150, 0.2) 0%, transparent 50%);
+  pointer-events: none;
+  z-index: 1;
+}
+
+.page-hero-banner::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: repeating-linear-gradient(45deg, rgba(255, 255, 255, 0.018) 0, rgba(255, 255, 255, 0.018) 1px, transparent 0, transparent 20px);
+  pointer-events: none;
+  z-index: 1;
+}
+
+.page-hero-banner .container {
+  position: relative;
+  z-index: 2;
+}
+
+/* ==========================================================================
+   ALTERNATING BACKGROUND RHYTHM SYSTEM (Pattern -> Solid Dark -> Plain Clean)
+   ========================================================================== */
+
+/* Treatment 1: Soft Lavender Background + Faint Lavender Dot Pattern */
+.pattern-bg-dots {
+  position: relative;
+  background-color: var(--cream-bg) !important;
+}
+
+.pattern-bg-dots::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: radial-gradient(rgba(145, 100, 150, 0.25) 1.2px, transparent 1.2px);
+  background-size: 28px 28px;
+  pointer-events: none;
+  opacity: 0.65;
+  z-index: 1;
+}
+
+.pattern-bg-dots .container {
+  position: relative;
+  z-index: 2;
+}
+
+/* Treatment 2: Solid Dark Royal Plum Block (Flat, NO pattern, NO texture) */
+.bg-solid-navy {
+  position: relative;
+  background-color: var(--navy-primary) !important;
+  color: #ffffff !important;
+}
+
+.bg-solid-navy h1, 
+.bg-solid-navy h2, 
+.bg-solid-navy h3, 
+.bg-solid-navy h4, 
+.bg-solid-navy h5, 
+.bg-solid-navy h6 {
+  color: #ffffff !important;
+}
+
+.bg-solid-navy p, 
+.bg-solid-navy .lead, 
+.bg-solid-navy .text-muted,
+.bg-solid-navy li {
+  color: rgba(255, 255, 255, 0.88) !important;
+}
+
+.bg-solid-navy .card,
+.bg-solid-navy .doctor-profile-card,
+.bg-solid-navy .value-card,
+.bg-solid-navy .testimonial-card,
+.bg-solid-navy .award-card,
+.bg-solid-navy .service-card {
+  background-color: rgba(255, 255, 255, 0.08) !important;
+  border: 1px solid rgba(219, 188, 223, 0.35) !important;
+  backdrop-filter: blur(8px);
+}
+
+.bg-solid-navy .stat-box {
+  background-color: rgba(145, 100, 150, 0.25) !important;
+  border: 1px solid rgba(219, 188, 223, 0.45) !important;
+}
+
+.bg-solid-navy .stat-box .number {
+  color: var(--accent-gold-mid) !important;
+}
+
+.bg-solid-navy .stat-box .label {
+  color: #ffffff !important;
+}
+
+/* Treatment 3: Plain Clean Background (Breathing Room - No pattern, No color block) */
+.bg-plain-clean {
+  position: relative;
+  background-color: #ffffff !important;
+}
+
+.bg-plain-clean .container {
+  position: relative;
+  z-index: 2;
+}
+
+.value-card {
+  background: #ffffff;
+  border-radius: 18px;
+  padding: 35px 30px;
+  border-top: 4px solid var(--accent-gold);
+  box-shadow: var(--card-shadow);
+  border-left: 1px solid var(--cream-border);
+  border-right: 1px solid var(--cream-border);
+  border-bottom: 1px solid var(--cream-border);
+  transition: var(--transition-smooth);
+  height: 100%;
+}
+
+.value-card:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--hover-shadow);
+}
+
+/* --- Contact Form --- */
+.contact-form-card {
+  background: #ffffff;
+  border-radius: 24px;
+  padding: 45px;
+  box-shadow: var(--hover-shadow);
+  border: 1px solid var(--cream-border);
+}
+
+.form-control, .form-select {
+  padding: 14px 18px;
+  border-radius: 12px;
+  border: 1px solid var(--cream-border);
+  font-size: 0.975rem;
+  background-color: var(--cream-bg);
+  transition: var(--transition-fast);
+}
+
+.form-control:focus, .form-select:focus {
+  background-color: #ffffff;
+  border-color: var(--accent-gold);
+  box-shadow: 0 0 0 4px rgba(197, 160, 89, 0.18);
+}
+
+/* --- Footer --- */
+.footer-custom {
+  background-color: var(--navy-dark);
+  color: rgba(255, 255, 255, 0.8);
+  padding: 85px 0 30px 0;
+  font-size: 0.95rem;
+  border-top: 1px solid rgba(197, 160, 89, 0.2);
+}
+
+.footer-custom h5 {
+  font-family: var(--font-serif);
+  color: #ffffff;
+  margin-bottom: 25px;
+  font-size: 1.25rem;
+}
+
+.footer-custom a {
+  color: rgba(255, 255, 255, 0.75);
+  transition: var(--transition-fast);
+}
+
+.footer-custom a:hover {
+  color: var(--accent-gold);
+  padding-left: 6px;
+}
+
+.footer-bottom {
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  margin-top: 55px;
+  padding-top: 28px;
+  font-size: 0.875rem;
+}
+
+/* --- Floating Sticky WhatsApp Button --- */
+.floating-whatsapp {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  width: 62px;
+  height: 62px;
+  background-color: #25d366;
+  color: #ffffff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.9rem;
+  box-shadow: 0 8px 25px rgba(37, 211, 102, 0.45);
+  z-index: 999;
+  transition: var(--transition-smooth);
+}
+
+.floating-whatsapp:hover {
+  transform: scale(1.12);
+  color: #ffffff;
+  box-shadow: 0 12px 30px rgba(37, 211, 102, 0.6);
+}
+
+/* --- Ensure All Sections & Cards Are 100% Visible By Default --- */
+section, .section-title, .award-card, .service-card, .doctor-profile-card, .testimonial-card, .value-card, .contact-form-card, .hero-slider {
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
+/* --- Navbar Scroll Shrink State --- */
+.navbar-custom.navbar-scrolled {
+  padding: 10px 0;
+  box-shadow: 0 10px 30px rgba(26, 35, 50, 0.12);
+  background-color: #ffffff;
+}
+
+/* --- Back To Top Floating Button --- */
+.back-to-top-btn {
+  position: fixed;
+  bottom: 30px;
+  left: 30px;
+  width: 50px;
+  height: 50px;
+  background-color: var(--navy-primary);
+  color: var(--accent-gold);
+  border: 1px solid rgba(197, 160, 89, 0.3);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  box-shadow: 0 6px 20px rgba(26, 35, 50, 0.25);
+  z-index: 998;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(20px);
+  transition: var(--transition-smooth);
+  cursor: pointer;
+}
+
+.back-to-top-btn.show {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.back-to-top-btn:hover {
+  background-color: var(--accent-gold);
+  color: #ffffff;
+  transform: translateY(-4px);
+  box-shadow: var(--gold-glow);
+}
+
+/* --- Handcrafted Doctor Signature & Human Touch Elements --- */
+.doctor-quote-banner {
+  background: var(--cream-bg);
+  border-left: 4px solid var(--accent-gold);
+  border-radius: 20px;
+  padding: 35px 40px;
+  box-shadow: var(--card-shadow);
+  position: relative;
+  transition: var(--transition-smooth);
+}
+
+.doctor-quote-banner:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--hover-shadow);
+}
+
+.doctor-quote-text {
+  font-family: var(--font-quote);
+  font-size: 1.6rem;
+  font-style: italic;
+  color: var(--navy-primary);
+  line-height: 1.45;
+  margin-bottom: 15px;
+}
+
+.doctor-signature {
+  font-family: var(--font-signature);
+  font-size: 2.75rem;
+  color: var(--accent-gold);
+  line-height: 1;
+  display: block;
+}
+
+.verified-seal {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: #ffffff;
+  border: 1px solid var(--cream-border);
+  padding: 8px 18px;
+  border-radius: 50px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--navy-primary);
+  box-shadow: var(--card-shadow);
+}
+
+.verified-seal i {
+  color: var(--accent-gold);
+}
+
