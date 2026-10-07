@@ -34,7 +34,7 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   // ==========================================
-  // 2. Pure Vanilla JS Hero Photo Slider (1-Second Auto Interval)
+  // 2. Pure Vanilla JS Hero Photo Slider (2-Second Auto Interval)
   // ==========================================
   const sliderEl = document.querySelector('#heroPhotoSlider');
   if (sliderEl) {
@@ -44,7 +44,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const nextBtn = sliderEl.querySelector('.carousel-control-next');
     let currentIndex = 0;
     let slideTimer = null;
-    const intervalTime = 1000; // 1 second per PRD & FRD spec
+    const intervalTime = parseInt(sliderEl.getAttribute('data-bs-interval'), 10) || 2000; // 2 seconds delay
 
     function showSlide(index) {
       if (index >= slides.length) index = 0;
