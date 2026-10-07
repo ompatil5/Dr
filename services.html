@@ -6,6 +6,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Services | Dr. Firdous Shaikh - Diabetologist Mumbai</title>
   <meta name="description" content="Clinical services including Diabetes Care, Women's Metabolic Health (PCOS/Thyroid), and Mental Wellbeing.">
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="assets/images/favicon.png">
+  <link rel="shortcut icon" href="assets/images/favicon.ico">
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/images/apple-touch-icon.png">
 
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -31,8 +35,11 @@
   <nav class="navbar navbar-expand-lg navbar-custom sticky-top">
     <div class="container">
       <a class="navbar-brand me-auto" href="index.html">
-        <span class="brand-name"><i class="fas fa-user-md text-teal me-2"></i>Dr. Firdous Shaikh</span>
-        <span class="brand-title">Diabetologist & Women's Health Specialist</span>
+        <img src="assets/images/logo.jpg" alt="DAWN Logo - Dr. Firdous Shaikh" class="navbar-logo-img">
+        <div>
+          <span class="brand-name">Dr. Firdous Shaikh</span>
+          <span class="brand-title">Diabetologist & Women's Health Specialist</span>
+        </div>
       </a>
 
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainMenu">
@@ -260,9 +267,152 @@
     </div>
   </section>
 
+    <!-- ==========================================
+       CONTACT INFO & APPOINTMENT FORM
+       ========================================== -->
+  <section class="section-padding bg-plain-clean" id="contactSection">
+    <div class="container">
+      <div class="row g-5">
+        <!-- Contact Details -->
+        <div class="col-lg-5">
+          <div class="section-title">
+            <span class="subtitle">Get In Touch</span>
+            <h2>Clinic Contact & Locations</h2>
+            <div class="divider"></div>
+          </div>
+
+          <div class="card border-0 shadow-sm rounded-4 p-4 mb-4" style="background:#ffffff; border:1px solid var(--cream-border)!important;">
+            <h5 class="text-navy mb-3 fw-bold"><i class="fas fa-clinic-medical text-teal me-2"></i> Jyoti Clinic (Primary Practice)</h5>
+            <p class="text-muted small mb-2"><i class="fas fa-map-marker-alt text-teal me-2"></i> 123 Healthcare Avenue, Bandra West, Mumbai, Maharashtra 400050</p>
+            <p class="text-muted small mb-2"><i class="fas fa-clock text-teal me-2"></i> Mon - Sat: 10:00 AM - 1:00 PM | 5:00 PM - 8:00 PM</p>
+            <p class="text-muted small mb-0"><i class="fas fa-phone text-teal me-2"></i> +91 98765 43210</p>
+          </div>
+
+          <div class="card border-0 shadow-sm rounded-4 p-4" style="background:#ffffff; border:1px solid var(--cream-border)!important;">
+            <h5 class="text-navy mb-3"><i class="fas fa-hospital text-teal me-2"></i> Affiliated Hospitals</h5>
+            <p class="text-muted small mb-1"><strong>Lilavati Hospital & Research Centre</strong> - By Appointment</p>
+            <p class="text-muted small mb-0"><strong>Apex Multi-Specialty Hospital</strong> - Tue & Thu Evening</p>
+          </div>
+        </div>
+
+        <!-- Contact Form -->
+        <div class="col-lg-7">
+          <div class="contact-form-card">
+            <h3 class="text-navy mb-2">Book an Appointment / Submit Query</h3>
+            <p class="text-muted small mb-4">Fill out the form below to schedule a visit or ask a question directly.</p>
+
+            <form class="mainContactForm">
+              <!-- Honeypot Field for Spam Protection -->
+              <input type="text" name="website_hp" style="display:none !important;" tabindex="-1" autocomplete="off">
+
+              <div class="row g-3">
+                <div class="col-md-6">
+                  <label class="form-label font-weight-600">Full Name *</label>
+                  <input type="text" class="form-control" placeholder="e.g. Ananya Sharma" required>
+                </div>
+                <div class="col-md-6">
+                  <label class="form-label font-weight-600">Phone Number *</label>
+                  <input type="tel" class="form-control" placeholder="+91 98765 43210" required>
+                </div>
+                <div class="col-md-6">
+                  <label class="form-label font-weight-600">Email Address</label>
+                  <input type="email" class="form-control" placeholder="name@example.com">
+                </div>
+                <div class="col-md-6">
+                  <label class="form-label font-weight-600">Consultation For</label>
+                  <select class="form-select">
+                    <option selected>Select Condition</option>
+                    <option value="Diabetes">Diabetes Care</option>
+                    <option value="PCOS">Women's Health / PCOS</option>
+                    <option value="Gestational">Gestational Diabetes</option>
+                    <option value="Thyroid">Thyroid & Endocrine</option>
+                    <option value="General">General Consultation</option>
+                  </select>
+                </div>
+                <div class="col-12">
+                  <label class="form-label font-weight-600">Message</label>
+                  <textarea class="form-control" rows="4" placeholder="Briefly describe your query..."></textarea>
+                </div>
+                <div class="col-12">
+                  <button type="submit" class="btn btn-primary bg-navy border-0 rounded-pill px-5 py-3 w-100 font-weight-bold">
+                    <i class="fas fa-paper-plane me-2"></i> Send Message
+                  </button>
+                </div>
+              </div>
+              <div class="formFeedback mt-3 text-center d-none"></div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================
+       FOOTER
+       ========================================== -->
   <footer class="footer-custom">
-    <div class="container text-center">
-      <p class="mb-0 text-light opacity-75">&copy; 2026 Dr. Firdous Shaikh - Jyoti Clinic. All Rights Reserved.</p>
+    <div class="container">
+      <div class="row g-4">
+        <div class="col-lg-4 col-md-6">
+          <div class="d-flex align-items-center gap-3 mb-3">
+            <img src="assets/images/logo.jpg" alt="DAWN Logo - Dr. Firdous Shaikh" class="footer-logo-img">
+            <div>
+              <h5 class="mb-0 text-white font-serif fw-bold">Dr. Firdous Shaikh</h5>
+              <span class="small text-gold fw-semibold">Diabetologist & Women's Health Specialist</span>
+            </div>
+          </div>
+          <p class="small text-light opacity-75">
+            Diabetologist & Women's Health Specialist based in Mumbai. Dedicated to empowering patients with evidence-based medical care, continuous monitoring, and holistic lifestyle restoration.
+          </p>
+          <div class="d-flex gap-3 fs-5 mt-3 text-teal">
+            <a href="#" class="text-white opacity-75 hover-gold"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" class="text-white opacity-75 hover-gold"><i class="fab fa-instagram"></i></a>
+            <a href="#" class="text-white opacity-75 hover-gold"><i class="fab fa-linkedin-in"></i></a>
+            <a href="#" class="text-white opacity-75 hover-gold"><i class="fab fa-youtube"></i></a>
+          </div>
+        </div>
+
+        <div class="col-lg-2 col-md-6">
+          <h5>Quick Links</h5>
+          <ul class="list-unstyled mb-0">
+            <li class="mb-2"><a href="index.html">Home</a></li>
+            <li class="mb-2"><a href="about.html">About Doctor</a></li>
+            <li class="mb-2"><a href="services.html">Services</a></li>
+            <li class="mb-2"><a href="blogs.html">Blogs & Media</a></li>
+            <li class="mb-2"><a href="contact.html">Contact Us</a></li>
+          </ul>
+        </div>
+
+        <div class="col-lg-3 col-md-6">
+          <h5>Resources</h5>
+          <ul class="list-unstyled mb-0">
+            <li class="mb-2"><a href="educational.html">Educational Brochures</a></li>
+            <li class="mb-2"><a href="ebooks.html">E-books & Guides</a></li>
+            <li class="mb-2"><a href="academic-presentations.html">Academic Presentations</a></li>
+            <li class="mb-2"><a href="events.html">Events & Workshops</a></li>
+            <li class="mb-2"><a href="ngo-charity.html">NGO & Social Impact</a></li>
+          </ul>
+        </div>
+
+        <div class="col-lg-3 col-md-6">
+          <h5>Clinic Location</h5>
+          <p class="small text-light opacity-75 mb-2">
+            <i class="fas fa-map-marker-alt text-teal me-2"></i> 123 Healthcare Avenue, Bandra West, Mumbai 400050
+          </p>
+          <p class="small text-light opacity-75 mb-2">
+            <i class="fas fa-phone-alt text-teal me-2"></i> +91 98765 43210
+          </p>
+          <p class="small text-light opacity-75">
+            <i class="fas fa-envelope text-teal me-2"></i> contact@drfirdousshaikh.com
+          </p>
+        </div>
+      </div>
+
+      <div class="footer-bottom text-center">
+        <p class="mb-0 text-light opacity-75">
+          &copy; 2026 Dr. Firdous Shaikh - Jyoti Clinic. All Rights Reserved. | Designed for Patient Wellness.
+        </p>
+      </div>
     </div>
   </footer>
 

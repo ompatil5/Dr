@@ -7,6 +7,10 @@
   <title>Dr. Firdous Shaikh | Diabetologist & Women's Metabolic Health Specialist Mumbai</title>
   <meta name="description"
     content="Dr. Firdous Shaikh is a leading diabetologist and founder of Jyoti Clinic in Mumbai, specializing in diabetes care, women's metabolic health, and mental wellbeing.">
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="assets/images/favicon.png">
+  <link rel="shortcut icon" href="assets/images/favicon.ico">
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/images/apple-touch-icon.png">
 
   <!-- Google Fonts: Playfair Display (Serif Headings) & Inter (Sans-serif Body) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -49,8 +53,11 @@
     <div class="container">
       <!-- Name + Designation (Top Left) -->
       <a class="navbar-brand me-auto" href="index.html">
-        <span class="brand-name"><i class="fas fa-user-md text-teal me-2"></i>Dr. Firdous Shaikh</span>
-        <span class="brand-title">Diabetologist & Women's Health Specialist</span>
+        <img src="assets/images/logo.jpg" alt="DAWN Logo - Dr. Firdous Shaikh" class="navbar-logo-img">
+        <div>
+          <span class="brand-name">Dr. Firdous Shaikh</span>
+          <span class="brand-title">Diabetologist & Women's Health Specialist</span>
+        </div>
       </a>
 
       <!-- Mobile Menu Toggle Button -->
@@ -701,6 +708,12 @@
   <!-- ==========================================
        SECTION 11: CONTACT INFO & FORM
        ========================================== -->
+  <!-- ==========================================
+       SECTION 12: FOOTER
+       ========================================== -->
+    <!-- ==========================================
+       CONTACT INFO & APPOINTMENT FORM
+       ========================================== -->
   <section class="section-padding bg-plain-clean" id="contactSection">
     <div class="container">
       <div class="row g-5">
@@ -732,26 +745,26 @@
             <h3 class="text-navy mb-2">Book an Appointment / Submit Query</h3>
             <p class="text-muted small mb-4">Fill out the form below to schedule a visit or ask a question directly.</p>
 
-            <form id="mainContactForm">
+            <form class="mainContactForm">
               <!-- Honeypot Field for Spam Protection -->
-              <input type="text" name="website_hp" id="website_hp" style="display:none !important;" tabindex="-1" autocomplete="off">
+              <input type="text" name="website_hp" style="display:none !important;" tabindex="-1" autocomplete="off">
 
               <div class="row g-3">
                 <div class="col-md-6">
-                  <label for="patientName" class="form-label font-weight-600">Full Name *</label>
-                  <input type="text" class="form-control" id="patientName" placeholder="e.g. Ananya Sharma" required>
+                  <label class="form-label font-weight-600">Full Name *</label>
+                  <input type="text" class="form-control" placeholder="e.g. Ananya Sharma" required>
                 </div>
                 <div class="col-md-6">
-                  <label for="patientPhone" class="form-label font-weight-600">Phone Number *</label>
-                  <input type="tel" class="form-control" id="patientPhone" placeholder="+91 98765 43210" required>
+                  <label class="form-label font-weight-600">Phone Number *</label>
+                  <input type="tel" class="form-control" placeholder="+91 98765 43210" required>
                 </div>
                 <div class="col-md-6">
-                  <label for="patientEmail" class="form-label font-weight-600">Email Address</label>
-                  <input type="email" class="form-control" id="patientEmail" placeholder="name@example.com">
+                  <label class="form-label font-weight-600">Email Address</label>
+                  <input type="email" class="form-control" placeholder="name@example.com">
                 </div>
                 <div class="col-md-6">
-                  <label for="consultationType" class="form-label font-weight-600">Consultation For</label>
-                  <select class="form-select" id="consultationType">
+                  <label class="form-label font-weight-600">Consultation For</label>
+                  <select class="form-select">
                     <option selected>Select Condition</option>
                     <option value="Diabetes">Diabetes Care</option>
                     <option value="PCOS">Women's Health / PCOS</option>
@@ -761,8 +774,8 @@
                   </select>
                 </div>
                 <div class="col-12">
-                  <label for="messageText" class="form-label font-weight-600">Message</label>
-                  <textarea class="form-control" id="messageText" rows="4" placeholder="Briefly describe your query..."></textarea>
+                  <label class="form-label font-weight-600">Message</label>
+                  <textarea class="form-control" rows="4" placeholder="Briefly describe your query..."></textarea>
                 </div>
                 <div class="col-12">
                   <button type="submit" class="btn btn-primary bg-navy border-0 rounded-pill px-5 py-3 w-100 font-weight-bold">
@@ -770,7 +783,7 @@
                   </button>
                 </div>
               </div>
-              <div id="formFeedback" class="mt-3 text-center d-none"></div>
+              <div class="formFeedback mt-3 text-center d-none"></div>
             </form>
           </div>
         </div>
@@ -779,13 +792,19 @@
   </section>
 
   <!-- ==========================================
-       SECTION 12: FOOTER
+       FOOTER
        ========================================== -->
   <footer class="footer-custom">
     <div class="container">
       <div class="row g-4">
         <div class="col-lg-4 col-md-6">
-          <h5><i class="fas fa-user-md text-teal me-2"></i>Dr. Firdous Shaikh</h5>
+          <div class="d-flex align-items-center gap-3 mb-3">
+            <img src="assets/images/logo.jpg" alt="DAWN Logo - Dr. Firdous Shaikh" class="footer-logo-img">
+            <div>
+              <h5 class="mb-0 text-white font-serif fw-bold">Dr. Firdous Shaikh</h5>
+              <span class="small text-gold fw-semibold">Diabetologist & Women's Health Specialist</span>
+            </div>
+          </div>
           <p class="small text-light opacity-75">
             Diabetologist & Women's Health Specialist based in Mumbai. Dedicated to empowering patients with evidence-based medical care, continuous monitoring, and holistic lifestyle restoration.
           </p>

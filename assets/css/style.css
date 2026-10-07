@@ -265,9 +265,9 @@ ul.list-unstyled li i {
 
 /* Treatment 2: Solid Dark Navy Block (Flat, NO Pattern) */
 .bg-solid-navy {
-  background-color: var(--navy-primary) !important;
+  background-color: var(--navy-dark) !important;
   background-image: none !important;
-  color: rgba(255, 255, 255, 0.9) !important;
+  color: rgba(255, 255, 255, 0.92) !important;
   position: relative;
 }
 .bg-solid-navy .section-title h2,
@@ -275,7 +275,7 @@ ul.list-unstyled li i {
   color: #ffffff !important;
 }
 .bg-solid-navy .section-title .subtitle {
-  color: var(--accent-gold) !important;
+  color: #E2B6EC !important;
 }
 .bg-solid-navy .divider {
   background: var(--gold-gradient) !important;
@@ -284,10 +284,13 @@ ul.list-unstyled li i {
   color: #ffffff !important;
 }
 .bg-solid-navy .text-muted {
-  color: rgba(255, 255, 255, 0.75) !important;
+  color: rgba(255, 255, 255, 0.85) !important;
+}
+.bg-solid-navy .text-teal {
+  color: #E2B6EC !important;
 }
 .bg-solid-navy .lead {
-  color: rgba(255, 255, 255, 0.9) !important;
+  color: rgba(255, 255, 255, 0.92) !important;
 }
 .bg-solid-navy .award-card,
 .bg-solid-navy .service-card,
@@ -295,8 +298,8 @@ ul.list-unstyled li i {
 .bg-solid-navy .value-card,
 .bg-solid-navy .contact-form-card,
 .bg-solid-navy .card {
-  background: rgba(255, 255, 255, 0.06) !important;
-  border: 1px solid rgba(197, 160, 89, 0.3) !important;
+  background: rgba(255, 255, 255, 0.08) !important;
+  border: 1px solid rgba(226, 182, 236, 0.3) !important;
   color: #ffffff !important;
   backdrop-filter: blur(8px);
 }
@@ -305,9 +308,33 @@ ul.list-unstyled li i {
 .bg-solid-navy .testimonial-card h6,
 .bg-solid-navy .value-card h4,
 .bg-solid-navy .contact-form-card h3,
+.bg-solid-navy .card h4,
 .bg-solid-navy .card h5,
 .bg-solid-navy .card h6 {
   color: #ffffff !important;
+  font-weight: 700 !important;
+}
+.bg-solid-navy .card p,
+.bg-solid-navy .card .text-muted {
+  color: rgba(255, 255, 255, 0.85) !important;
+}
+.bg-solid-navy .card .text-teal,
+.bg-solid-navy .card i {
+  color: #E2B6EC !important;
+}
+/* White Badge Button Contrast Fix */
+.bg-solid-navy .badge.bg-white,
+.card .badge.bg-white,
+.badge.bg-white {
+  background-color: #ffffff !important;
+  color: #240C2B !important;
+  font-weight: 700 !important;
+}
+.bg-solid-navy .badge.bg-gold,
+.badge.bg-gold {
+  background-color: var(--accent-gold) !important;
+  color: #ffffff !important;
+  font-weight: 700 !important;
 }
 .bg-solid-navy .form-label {
   color: rgba(255, 255, 255, 0.9) !important;
@@ -446,12 +473,45 @@ ul.list-unstyled li i {
   transition: var(--transition-fast);
 }
 
+.navbar-brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  text-decoration: none;
+}
+
+.navbar-logo-img {
+  height: 48px;
+  width: 48px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 2px solid var(--accent-gold);
+  box-shadow: 0 3px 10px rgba(61, 27, 68, 0.15);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  flex-shrink: 0;
+}
+
+.navbar-brand:hover .navbar-logo-img {
+  transform: scale(1.06);
+  box-shadow: 0 4px 14px rgba(61, 27, 68, 0.25);
+}
+
 .navbar-brand .brand-name {
   font-family: var(--font-serif);
   font-size: 1.45rem;
   font-weight: 700;
   color: var(--navy-primary);
   line-height: 1.2;
+}
+
+.footer-logo-img {
+  height: 48px;
+  width: 48px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 2px solid var(--accent-gold);
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.25);
+  flex-shrink: 0;
 }
 
 .navbar-brand .brand-title {
